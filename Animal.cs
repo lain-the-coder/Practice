@@ -2,7 +2,7 @@ using System;
 
 namespace Practice
 {
-	public class Animal
+	public abstract class Animal
 	{
 		public const string ShelterName = "Paws & Care";
 		public Guid ID {get; }
@@ -81,5 +81,14 @@ namespace Practice
 				Console.WriteLine($"Treatment {treatmentname} applied, +{healamount}HP");
 			}
 		}
+		public abstract void MakeSound();
+		public virtual void Eat()
+		{
+			Console.WriteLine("All animals ingest their food");	
+		}
+		public void Describe()
+		{
+			Console.WriteLine("Animal");
+		} 
 	}
 }
